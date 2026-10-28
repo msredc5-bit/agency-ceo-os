@@ -43,6 +43,15 @@ python3 boss-ceo/scripts/boss_run.py
 - **Still needs Boss (no code can invent these):** API key for the live test,
   and a hosting choice if it must run 24/7. Until then: mock only, $0.
 
+## Second system — Creator Studio, 2026-10-29 (verified)
+
+`creator-system/` — Content Creation, Media & Entertainment, the second
+built system next to Talvenor. 6 workers: TopicResearcher, ScriptWriter,
+VisualProducer, CaptionWriter, PublishPrep (gate `post it`), PerformanceTracker.
+Flow: CEO decision → research → script → visual → caption → publish prep
+→ report. Mock run verified: 6/6 workers ok, 6 gates, none auto-advanced,
+$0. Tests 3/3. See `creator-system/README.md`.
+
 ## Improvement round — 2026-10-29 (verified)
 
 - Engine tests added (`boss-ceo/tests/test_engine.py`, 4/4): roster is 15

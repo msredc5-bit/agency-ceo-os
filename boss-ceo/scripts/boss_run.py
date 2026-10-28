@@ -41,6 +41,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=str(date.today()))
     ap.add_argument("--db", default="data/boss-ceo.db")
+    ap.add_argument("--report-json", default="",
+                    help="Write the structured day report (gates, provider "
+                         "health, counts) to this JSON path. Empty = skip.")
     args = ap.parse_args()
 
     llm = MockLLMProvider(seed="boss-ceo-v1")
@@ -65,6 +68,24 @@ def main():
     print(ceo.chairman_brief(report))
     print()
     print(f"mock LLM calls: {llm.calls} | spend: $0.00")
+
+    if args.report_json:
+        import json
+        payload = {
+            "date": report.date,
+            "mode": "mock",
+            "divisions_run": report.divisions_run,
+            "workers_run": report.workers_run,
+            "workers_ok": report.workers_ok,
+            "mock_revenue_usd": report.mock_revenue_usd,
+            "mock_cost_usd": report.mock_cost_usd,
+            "pending_gates": ceo.pending_gates(report),
+            "provider_health": llm.health(),
+            "note": "Mock data only. Gates listed here are WAITING — none auto-advanced.",
+        }
+        with open(args.report_json, "w", encoding="utf-8") as fh:
+            json.dump(payload, fh, indent=2, ensure_ascii=False)
+        print(f"day report JSON: {args.report_json}")
 
 
 if __name__ == "__main__":

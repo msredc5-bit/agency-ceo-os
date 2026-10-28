@@ -1,7 +1,7 @@
 """BossCEO — the chairman's personal CEO agent.
 
 Customized from Boss's profile (config/boss.yaml):
-- Knows his 4 real divisions and 11 workers (not 50 generic ones)
+- Knows his 4 real divisions and 15 workers (not 50 generic ones)
 - Enforces his approval gates IN CODE: gated task kinds are reported as
   'awaiting Boss' and never auto-advanced
 - Chairman brief in Bengali (his language), $0 spend, mock-first

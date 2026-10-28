@@ -42,3 +42,16 @@ python3 boss-ceo/scripts/boss_run.py
   without a key ($0 spent).
 - **Still needs Boss (no code can invent these):** API key for the live test,
   and a hosting choice if it must run 24/7. Until then: mock only, $0.
+
+## Improvement round — 2026-10-29 (verified)
+
+- Engine tests added (`boss-ceo/tests/test_engine.py`, 4/4): roster is 15
+  workers / 4 divisions, a failing worker cannot crash the day, mock cost is
+  $0, brief is labelled mock, and boss-ceo code contains no real network
+  calls (no urllib / requests / smtp / socket).
+- `boss_run.py` gains `--report-json`: the day report (counts, pending gates,
+  provider health) is now saved as structured JSON, not just printed.
+- Pre-push secret scan (`boss-ceo/scripts/scan_secrets.py`) + `SECURITY.md`:
+  keys come from the environment only; placeholders and test keys pass.
+- Note: worker failure isolation already existed in `WorkerBase.execute` —
+  it was verified by test, not rebuilt.

@@ -1,0 +1,43 @@
+# Boss profile — the CEO agent reads this to customize everything.
+# Edit freely; no code changes needed.
+
+chairman:
+  name: Md Mainuddin
+  title: Boss
+  timezone: Asia/Dhaka
+  languages: [Bengali, Banglish, English]
+  # Spoken English is difficult: performed scripts get Bengali transliteration,
+  # things he must understand get a short Bengali gloss.
+
+company:
+  name: Talvenor
+  legal: MAINUDDIN LLC (Pennsylvania, USA)
+  offer: Done-for-you AI voice receptionist for US home-service businesses
+  brand:
+    tagline: "Never miss a call. Never lose a job."
+    subline: "You run the jobs. We run the phone."
+    colors: { navy: "#0B1D33", teal: "#14B8A6", white: "#FFFFFF" }
+
+# Approval gates — the CEO enforces these in code. Nothing in these
+# categories moves without Boss's exact word.
+gates:
+  ok: "plan / asset approval"
+  "post it": "publish a post"
+  "upload it": "upload a video"
+  send: "send a message or email"
+  go: "advance a build phase"
+
+# Standing rules baked into every worker
+rules:
+  - "No invented clients, testimonials, reviews, statistics, prices, or guarantees."
+  - "No dental, medical, or patient-health targeting."
+  - "IG replies: plain decline -> polite exit (allowed); interest/question/pricing -> draft only, never send."
+  - "Email lane: draft-Elora, send-Boss."
+  - "$0 spend default. Mock-first. No spend without explicit approval for that exact action."
+  - "Real booking link is CLIENT INPUT REQUIRED — never invent one."
+
+divisions:
+  - { id: ACQ, name: "Client Acquisition",  mission: "Boss's SDR team: find prospects, draft outreach, triage replies" }
+  - { id: DEL, name: "Receptionist Delivery", mission: "Build and QA Talvenor voice receptionists (Retell/Vapi)" }
+  - { id: MKT, name: "Marketing & Content",  mission: "Weekly content engine: plan, produce, caption, prep publish" }
+  - { id: OPS, name: "Operations & Admin",   mission: "Inbox, reports, scheduling — the back office" }

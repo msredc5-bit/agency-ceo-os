@@ -1,6 +1,6 @@
 """CEO-OS end-to-end demo.
 
-Runs the full engine (4 divisions, 13 workers) with the provider selected by
+Runs the full engine (4 divisions, 15 workers) with the provider selected by
 build_provider(): live Muse Spark when MODEL_API_KEY is set, loud mock
 fallback otherwise. $0 spend, nothing goes live.
 

@@ -1,7 +1,7 @@
 # Boss CEO — Md Mainuddin's Personal CEO Agent
 
 Not the generic 50-division conglomerate. This is **Boss's own CEO**: 4 divisions
-mirroring his real work, 13 workers running his actual SOPs, his approval gates
+mirroring his real work, 15 workers running his actual SOPs, his approval gates
 enforced **in code**, and the Chairman brief in **Bengali**.
 
 ## Quickstart

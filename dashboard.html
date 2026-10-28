@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Agency CEO OS — Demo Dashboard (mock data)</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:860px;margin:2em auto;padding:0 1em;color:#111}
+h1{font-size:1.4em} h2{font-size:1.1em;margin-top:1.5em}
+table{border-collapse:collapse;width:100%} td,th{border:1px solid #ccc;padding:6px 8px;text-align:left}
+.note{background:#fff8e1;border:1px solid #e6c200;padding:10px}
+</style>
+</head>
+<body>
+<h1>Agency CEO OS — Demo Dashboard</h1>
+<p class="note"><b>Honest label:</b> this page shows the system structure and the
+mock demo state. It is NOT a live control panel: no worker runs from here,
+nothing sends, publishes, or spends from here. Live runs happen from the
+command line (see README + DEPLOY.md), and every gated action still waits
+for Boss's word.</p>
+
+<h2>Chain of command</h2>
+<p>Boss (Md Mainuddin) → Main CEO Bot (BossCEO) → 4 Division Managers →
+15 workers. <b>No COO layer:</b> at this scale the CEO + division managers
+already coordinate everything; a COO would duplicate the division managers'
+job. A COO/Chief-of-Staff layer is a later option only if the business
+count grows past one agency.</p>
+
+<h2>Divisions &amp; workers (15)</h2>
+<table>
+<tr><th>Division</th><th>Workers</th><th>Gate before anything goes out</th></tr>
+<tr><td>ACQ — Client Acquisition</td><td>ProspectResearcher, OutreachDrafter, ReplyHandler, NegotiationCoach</td><td>ok / send</td></tr>
+<tr><td>DEL — Receptionist Delivery</td><td>RetellBuilder, QAEngineer, OnboardingAgent</td><td>ok</td></tr>
+<tr><td>MKT — Marketing &amp; Content</td><td>ContentPlanner, VideoProducer, CaptionWriter, PublishPrep, ObjectionSimulator</td><td>ok / post it / upload it</td></tr>
+<tr><td>OPS — Operations &amp; Admin</td><td>InboxTriager, ReportCompiler, SchedulerAssistant</td><td>ok</td></tr>
+</table>
+
+<h2>Provider modes</h2>
+<ul>
+<li><b>Mock ($0):</b> deterministic fake answers. Used by <code>boss-ceo/scripts/boss_run.py</code>
+and by the demo when no key is set. Nothing leaves the machine.</li>
+<li><b>Live (Muse Spark via Meta Model API):</b> used by <code>ceo-os</code> demo when
+<code>MODEL_API_KEY</code> is set. One tiny call first (<code>scripts/live_check.py</code>),
+then the full demo. Token counts are printed; $ cost follows Meta's price sheet.</li>
+</ul>
+
+<h2>What is NOT here yet</h2>
+<ul>
+<li>Real tool execution: workers draft and plan through the model; they do not
+send email, book calendars, or call Vapi/Retell APIs by themselves.</li>
+<li>24/7 hosting: this code runs on demand from a computer. A rented server
+is needed only when it must run around the clock (see DEPLOY.md).</li>
+<li>Real customer data: the demo uses mock data only.</li>
+</ul>
+<p>Run the mock demo: <code>python3 boss-ceo/scripts/boss_run.py</code></p>
+</body>
+</html>

@@ -19,18 +19,19 @@ from src.ceo.boss_ceo import BossCEO  # noqa: E402
 from src.divisions.manager import DivisionManagerBase  # noqa: E402
 from src.mock.provider import MockLLMProvider  # noqa: E402
 from src.store.db import SQLiteStore  # noqa: E402
-from src.workers.acquisition import ProspectResearcher, OutreachDrafter, ReplyHandler  # noqa: E402
+from src.workers.acquisition import ProspectResearcher, OutreachDrafter, ReplyHandler, NegotiationCoach  # noqa: E402
 from src.workers.delivery import RetellBuilder, QAEngineer, OnboardingAgent  # noqa: E402
-from src.workers.marketing import ContentPlanner, VideoProducer, CaptionWriter, PublishPrep  # noqa: E402
+from src.workers.marketing import ContentPlanner, VideoProducer, CaptionWriter, PublishPrep, ObjectionSimulator  # noqa: E402
 from src.workers.admin import InboxTriager, ReportCompiler, SchedulerAssistant  # noqa: E402
 
 ROSTER = {
     ("ACQ", "Client Acquisition"): [
-        ProspectResearcher, OutreachDrafter, ReplyHandler],
+        ProspectResearcher, OutreachDrafter, ReplyHandler, NegotiationCoach],
     ("DEL", "Receptionist Delivery"): [
         RetellBuilder, QAEngineer, OnboardingAgent],
     ("MKT", "Marketing & Content"): [
-        ContentPlanner, VideoProducer, CaptionWriter, PublishPrep],
+        ContentPlanner, VideoProducer, CaptionWriter, PublishPrep,
+        ObjectionSimulator],
     ("OPS", "Operations & Admin"): [
         InboxTriager, ReportCompiler, SchedulerAssistant],
 }

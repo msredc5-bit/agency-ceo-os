@@ -28,3 +28,17 @@ review before any public release.
 pip install -r boss-ceo/requirements.txt   # pyyaml only
 python3 boss-ceo/scripts/boss_run.py
 ```
+
+## Completion update — 2026-10-29 (verified)
+
+- **COO: NOT added, on purpose.** The Main CEO + 4 Division Managers already
+  coordinate 15 workers; a COO would duplicate the division managers. Revisit
+  only when the business count grows past one agency.
+- **Rosters synced to 15 workers** everywhere (`boss_run.py` was still on 13).
+- **Added:** `dashboard.html` (demo dashboard, honestly labelled mock) and
+  `DEPLOY.md` (how to run anywhere, how to go live, what still needs Boss).
+- **Verified this day:** mock boss run (16 calls, $0), mock demo run (9 pending
+  gates, none auto-advanced), provider tests 6/6, live-check correctly SKIP
+  without a key ($0 spent).
+- **Still needs Boss (no code can invent these):** API key for the live test,
+  and a hosting choice if it must run 24/7. Until then: mock only, $0.

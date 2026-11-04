@@ -1,8 +1,8 @@
-# Agency CEO OS — private review copy
+# Agency CEO OS
 
 One Main CEO Bot running an AI agency system, powered by Meta's Muse Spark
-models. This is Boss's personal agency system (Talvenor), kept here for his
-review before any public release.
+models. This is Boss's personal agency system (Talvenor), now public for the
+Meta Global AI Developer Hackathon submission.
 
 ## What is inside
 
